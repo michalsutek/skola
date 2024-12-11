@@ -1,3 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse
+from . models import * # naimportovanie všetkých modelov z models.py v tomto priečinku
 
-# Create your views here.
+def index(request):
+    studenti = Student.objects.all()
+    return HttpResponse(studenti)

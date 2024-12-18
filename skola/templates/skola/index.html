@@ -1,0 +1,40 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'skola/skola.css' %}">
+    <title>Document</title>
+</head>
+<body>
+   {% if studenti %}
+   <h1>Študenti:</h1>
+   <ul>
+    {% for student in studenti %}
+    <li>{{student}}</li>
+    {% endfor %}
+   </ul>
+   {% endif %}
+
+   {% if ucitelia %}
+   <h1>Učitelia:</h1>
+   <ul>
+    {% for ucitel in ucitelia %}
+    <li>{{ucitel}}</li>
+    {% endfor %}
+   </ul>
+   {% endif %}
+
+   {% if triedy %}
+   <h1>Triedy:</h1>
+   <ul>
+    {% for trieda in triedy %}
+    <li>{{trieda}}</li>
+    {% endfor %}
+   </ul>
+   {% endif %}
+   
+
+</body>
+</html>

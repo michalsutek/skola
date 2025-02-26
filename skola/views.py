@@ -17,4 +17,10 @@ def list_teachers(request):
 
 def list_triedy(request):
     triedy = Trieda.objects.all()
-    return render(request, "skola/index.html", {"triedy":triedy})    
+    return render(request, "skola/index.html", {"triedy":triedy})
+
+def vypis_trieda(request, pk):
+    trieda = Trieda.objects.get(pk=pk) # do premennej trieda priradí jeden objekt konkrétnej triedy (pk)
+    studenti = Student.objects.filter(trieda=trieda).order_by("priezvisko")
+    ucitel = Ucitel.objects.get(trieda=trieda)
+    return render(request, "skola/vypis_trieda.html", {"trieda":trieda, "studenti":studenti, "ucitel":ucitel})

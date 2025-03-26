@@ -24,3 +24,7 @@ def vypis_trieda(request, pk):
     studenti = Student.objects.filter(trieda=trieda).order_by("priezvisko")
     ucitel = Ucitel.objects.get(trieda=trieda)
     return render(request, "skola/vypis_trieda.html", {"trieda":trieda, "studenti":studenti, "ucitel":ucitel})
+
+def detail_student(request, pk):
+    student = Student.objects.get(pk=pk)
+    return render(request, "skola/detail_student.html", {"student":student})

@@ -8,5 +8,13 @@
 <body>
     <h2>Študent: {{student.meno}} {{student.priezvisko}}</h2>
     <p>Trieda: {{student.trieda.nazov}}</p>
+    {% if kruzky%}
+    <p>Krúžky:</p>
+        <ul>
+            {% for kruzok in kruzky%}
+            <li>{{kruzok}}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
 </body>
 </html>

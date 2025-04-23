@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Krúžok: {{kruzok.nazov}}</h2>
+    <p>Učiteľ: {{ucitel.titul}} {{ucitel.meno}} {{ucitel.priezvisko}}</p>
+    <h3>Študenti:</h3>
+    <ul>
+        {% for student in studenti %}
+        <li><a href="{% url 'detail-student' pk=student.pk %}">{{student}}</a></li>
+        {% endfor %}           
+    </ul>
+</body>
+</html>
